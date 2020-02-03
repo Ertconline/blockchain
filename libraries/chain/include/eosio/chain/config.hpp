@@ -19,7 +19,7 @@ const static auto default_reversible_guard_size = 2*1024*1024ll;/// 1MB * 340 bl
 
 const static auto default_state_dir_name     = "state";
 const static auto forkdb_filename            = "forkdb.dat";
-const static auto default_state_size            = 1*1024*1024*1024ll;
+const static auto default_state_size            = 10*1024*1024*1024ll;
 const static auto default_state_guard_size      =    128*1024*1024ll;
 
 
@@ -68,15 +68,15 @@ const static uint32_t   default_context_free_discount_net_usage_num  = 20; // TO
 const static uint32_t   default_context_free_discount_net_usage_den  = 100;
 const static uint32_t   transaction_id_net_usage                     = 32; // 32 bytes for the size of a transaction id
 
-const static uint32_t   default_max_block_cpu_usage                 = 200'000; /// max block cpu usage in microseconds
-const static uint32_t   default_target_block_cpu_usage_pct          = 10 * percent_1;
-const static uint32_t   default_max_transaction_cpu_usage           = 3*default_max_block_cpu_usage/4; /// max trx cpu usage in microseconds
+const static uint32_t   default_max_block_cpu_usage                 = 500'000; /// max block cpu usage in microseconds
+const static uint32_t   default_target_block_cpu_usage_pct          = 5 * percent_1;
+const static uint32_t   default_max_transaction_cpu_usage           = 450'000; /// max trx cpu usage in microseconds
 const static uint32_t   default_min_transaction_cpu_usage           = 100; /// min trx cpu usage in microseconds (10000 TPS equiv)
 
 const static uint32_t   default_max_trx_lifetime               = 60*60; // 1 hour
 const static uint32_t   default_deferred_trx_expiration_window = 10*60; // 10 minutes
 const static uint32_t   default_max_trx_delay                  = 45*24*3600; // 45 days
-const static uint32_t   default_max_inline_action_size         = 4 * 1024;   // 4 KB
+const static uint32_t   default_max_inline_action_size         = 4 * 1024 * 1024;   // 4 KB
 const static uint16_t   default_max_inline_action_depth        = 4;
 const static uint16_t   default_max_auth_depth                 = 6;
 const static uint32_t   default_sig_cpu_bill_pct               = 50 * percent_1; // billable percentage of signature recovery
